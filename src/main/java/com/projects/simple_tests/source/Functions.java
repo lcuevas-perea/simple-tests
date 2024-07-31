@@ -15,28 +15,31 @@ public class Functions {
   private static final Logger logger
       = LoggerFactory.getLogger(Functions.class);
 
-  void encode() {
+  void encodeDecodeExamples() {
+
+    logger.info("encodeDecodeExamples");
+
     String text = "Can you still read this text?";
+
+    logger.info("text: {}", text);
+
     String encoded = URLEncoder.encode(text, UTF_8);
 
-    logger.info("encode: {}", encoded);
+    logger.info("URL encode: {}", encoded);
 
     //encoded: Can+you+still+read+this+text%3F
     String decoded = URLDecoder.decode(encoded, UTF_8);
 
-    logger.info("decode: {}", decoded);
-  }
+    logger.info("URL decode: {}", decoded);
 
-  void decode() {
-    String text = "Can you still read this text?";
-    String encoded = Base64.getEncoder().encodeToString(text.getBytes(UTF_8));
+    encoded = Base64.getEncoder().encodeToString(text.getBytes(UTF_8));
 
-    logger.info("encode: {}", encoded);
+    logger.info("Base64 encode: {}", encoded);
 
     // encoded: Q2FuIHlvdSBzdGlsbCByZWFkIHRoaXMgdGV4dD8=
-    String decoded = new String(Base64.getDecoder().decode(encoded.getBytes(UTF_8)));
+    decoded = new String(Base64.getDecoder().decode(encoded.getBytes(UTF_8)));
 
-    logger.info("decode: {}", decoded);
+    logger.info("Base64 decode: {}", decoded);
 
   }
 

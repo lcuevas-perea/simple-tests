@@ -26,8 +26,7 @@ public class Application {
 
       logger.info("Let's test stuff");
 
-      functions.encode();
-      functions.decode();
+      functions.encodeDecodeExamples();
 
     };
   }
