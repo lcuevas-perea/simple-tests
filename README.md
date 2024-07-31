@@ -1,1 +1,1 @@
-# simple-tests
+# simple-functions
